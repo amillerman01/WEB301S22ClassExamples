@@ -2,3 +2,20 @@ html, body{
     margin: 0;
     padding: 0;
 }
+header, footer{
+    padding: 16px;
+    text-align: center;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+#content-wrapper{
+    padding: 16px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+#content-wrapper img{
+    width: 50%;
+    max-width: 362px;
+    display: block;
+    margin: 0 auto;    
+}
