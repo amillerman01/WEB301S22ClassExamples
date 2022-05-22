@@ -9,7 +9,7 @@ header, footer{
     margin: 0 auto;
 }
 #content-wrapper{
-    padding: 16px;
+    margin: 16px;
     max-width: 1024px;
     margin: 0 auto;
 }
@@ -17,5 +17,14 @@ header, footer{
     width: 50%;
     max-width: 362px;
     display: block;
-    margin: 0 auto;    
+    margin: 0 auto;   
+    clear: both; 
+}
+.column-wrapper{
+    clear: both;
+    box-sizing:border-box;
+}
+.column-3{
+    width: calc(100% / 3);
+    float: left;
 }
