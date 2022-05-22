@@ -12,6 +12,8 @@ header, footer{
     margin: 16px;
     max-width: 1024px;
     margin: 0 auto;
+    border: 1px solid #999;
+    padding: 16px;
 }
 #content-wrapper img{
     width: 50%;
@@ -21,10 +23,9 @@ header, footer{
     clear: both; 
 }
 .column-wrapper{
-    clear: both;
-    box-sizing:border-box;
 }
 .column-3{
     width: calc(100% / 3);
     float: left;
+    text-align: center;
 }
