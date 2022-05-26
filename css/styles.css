@@ -15,9 +15,9 @@ header, footer{
     border: 1px solid #999;
     padding: 16px;
 }
+/* this css definition of the img will always be applied */
 #content-wrapper img{
-    width: 50%;
-    max-width: 362px;
+    width: 600px;
     display: block;
     margin: 0 auto;   
     clear: both; 
@@ -28,4 +28,12 @@ header, footer{
     width: calc(100% / 3);
     float: left;
     text-align: center;
+}
+
+@media screen and (max-width: 639px) {
+    /* this css definition of the img will only be applied when the screen is 639px wide or less */
+    #content-wrapper img{
+        width: 50%;
+        max-width: 362px;
+    }
 }
