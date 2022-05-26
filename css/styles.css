@@ -31,6 +31,20 @@ header, footer{
 }
 
 
+/* This is a great spot for this! */
+/* Tablet and Mobile view */
+@media screen and (max-width: 639px) {
+    /* this css definition of the img will only be applied when the screen is 639px wide or less */
+    #content-wrapper{
+        /* Now dodgerblue has a chance to apply itself on tablet resolutions, and chocolate applies on mobile resolutions */
+        background-color: chocolate;
+    }
+    #content-wrapper img{
+        max-width: 362px;
+    }
+}
+
+
 /* Tablet view */
 @media screen and (min-width: 321px) and (max-width: 639px) {
     #content-wrapper{
@@ -55,16 +69,3 @@ header, footer{
     }
 }
 
-
-/* This is a bad spot for this! */
-/* Tablet and Mobile view */
-@media screen and (max-width: 639px) {
-    /* this css definition of the img will only be applied when the screen is 639px wide or less */
-    #content-wrapper{
-        /* dodgerblue will never work this way, because the css selector is the same specificity */
-        background-color: chocolate;
-    }
-    #content-wrapper img{
-        max-width: 362px;
-    }
-}
