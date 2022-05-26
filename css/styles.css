@@ -30,16 +30,12 @@ header, footer{
     text-align: center;
 }
 
-/* Tablet and Mobile view */
-@media screen and (max-width: 639px) {
-    /* this css definition of the img will only be applied when the screen is 639px wide or less */
-    #content-wrapper img{
-        max-width: 362px;
-    }
-}
 
 /* Tablet view */
 @media screen and (min-width: 321px) and (max-width: 639px) {
+    #content-wrapper{
+        background-color: dodgerblue;
+    }
     /* this css definition of the img will only be applied when the screen is larger than 320px and narrower than 640px wide */
     #content-wrapper img{
         width: 70%;
@@ -56,5 +52,19 @@ header, footer{
     /* this css definition of the img will only be applied when the screen is 320px wide or less */
     #content-wrapper img{
         width: 100%;
+    }
+}
+
+
+/* This is a bad spot for this! */
+/* Tablet and Mobile view */
+@media screen and (max-width: 639px) {
+    /* this css definition of the img will only be applied when the screen is 639px wide or less */
+    #content-wrapper{
+        /* dodgerblue will never work this way, because the css selector is the same specificity */
+        background-color: chocolate;
+    }
+    #content-wrapper img{
+        max-width: 362px;
     }
 }
