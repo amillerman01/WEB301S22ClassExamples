@@ -30,10 +30,31 @@ header, footer{
     text-align: center;
 }
 
+/* Tablet and Mobile view */
 @media screen and (max-width: 639px) {
     /* this css definition of the img will only be applied when the screen is 639px wide or less */
     #content-wrapper img{
-        width: 50%;
         max-width: 362px;
+    }
+}
+
+/* Tablet view */
+@media screen and (min-width: 321px) and (max-width: 639px) {
+    /* this css definition of the img will only be applied when the screen is larger than 320px and narrower than 640px wide */
+    #content-wrapper img{
+        width: 70%;
+    }
+
+}
+
+/* Mobile view */
+@media screen and (max-width: 320px) {
+    /* remove the padding on the left and right for mobile devices */
+    #content-wrapper{
+        padding: 16px 0;
+    }
+    /* this css definition of the img will only be applied when the screen is 320px wide or less */
+    #content-wrapper img{
+        width: 100%;
     }
 }
