@@ -82,6 +82,27 @@ p{
 }
 
 /* end of text considerations */
+
+/* start of landscape orientation detection */
+#wrapper { 
+    display: block; 
+    background-color: #f00;
+    padding: 24px;
+}
+#landscape-wrapper { 
+    background-color: #0f0;
+    display: none;
+    padding: 24px;
+}
+@media only screen and (max-device-width: 639px) and (orientation: landscape) {
+    #wrapper {
+        display: none; 
+    }
+    #landscape-wrapper { 
+        display: block; 
+    }
+}
+/* end of landscape orientation detection */
 footer{
     padding: 16px;
 }
