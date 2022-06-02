@@ -74,6 +74,14 @@ nav a{
 }
 
 /* end of image example css */ 
+
+/* start of text considerations */
+
+p{
+    font-size: 18px;
+}
+
+/* end of text considerations */
 footer{
     padding: 16px;
 }
@@ -95,6 +103,14 @@ footer{
     }
     .main-image-m { 
         display: block; 
+    }
+    p{
+        /* font-size: 24px;
+        line-height: 30px;
+        font-family: sans-serif; */
+
+        font: 24px/30px sans-serif;
+        padding: 0 8px;
     }
 }
 
