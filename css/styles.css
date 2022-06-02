@@ -59,7 +59,15 @@ nav a{
     /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
     background: transparent url('../imgs/sample-wide.jpg') no-repeat left center;
     height: 500px;
+    display: none; /* remove this if you want to see example 1 working */
 }
+#image-example-4{
+
+}
+#image-example-4 picture img{
+    width: 100%;
+}
+
 /* end of image example css */ 
 footer{
     padding: 16px;
