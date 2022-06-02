@@ -33,9 +33,10 @@ nav a{
 }
 /* start of image example css */
 .main-image-d {
-    width: 960px; 
-    height: auto;
+    width: auto; 
+    height: 700px;
     display: block;
+    margin: 0 auto;
 }
 .main-image-m {
     width: 100%; 
@@ -43,14 +44,6 @@ nav a{
     display: none;
 }
 
-@media screen and (max-width: 400px) {
-    .main-image-d { 
-        display: none; 
-    }
-    .main-image-m { 
-        display: block; 
-    }
-}
 /* end of image example css */ 
 footer{
     padding: 16px;
@@ -65,11 +58,14 @@ footer{
         /* Now dodgerblue has a chance to apply itself on tablet resolutions, and chocolate applies on mobile resolutions */
         background-color: chocolate;
     }
-    #content-wrapper img{
-        max-width: 362px;
-    }
     nav a{
         padding: 16px;
+    }
+    .main-image-d { 
+        display: none; 
+    }
+    .main-image-m { 
+        display: block; 
     }
 }
 
@@ -79,11 +75,6 @@ footer{
     #content-wrapper{
         background-color: dodgerblue;
     }
-    /* this css definition of the img will only be applied when the screen is larger than 320px and narrower than 640px wide */
-    #content-wrapper img{
-        width: 70%;
-    }
-
 }
 
 /* Mobile view */
@@ -91,13 +82,6 @@ footer{
     /* remove the padding on the left and right for mobile devices */
     #content-wrapper{
         padding: 16px 0;
-    }
-    /* this css definition of the img will only be applied when the screen is 320px wide or less */
-    #content-wrapper img{
-        width: 100%;
-    }
-    nav{
-
     }
     nav .column-3{
         width: 100%;
