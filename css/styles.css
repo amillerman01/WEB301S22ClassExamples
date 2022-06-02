@@ -24,13 +24,6 @@ nav a{
     padding: 16px;
     box-sizing: border-box;
 }
-/* this css definition of the img will always be applied */
-#content-wrapper img{
-    width: 600px;
-    display: block;
-    margin: 0 auto;   
-    clear: both; 
-}
 .column-wrapper{
 }
 .column-3{
@@ -38,6 +31,27 @@ nav a{
     float: left;
     text-align: center;
 }
+/* start of image example css */
+.main-image-d {
+    width: 960px; 
+    height: auto;
+    display: block;
+}
+.main-image-m {
+    width: 100%; 
+    /* height: 300px;  */
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    .main-image-d { 
+        display: none; 
+    }
+    .main-image-m { 
+        display: block; 
+    }
+}
+/* end of image example css */ 
 footer{
     padding: 16px;
 }
