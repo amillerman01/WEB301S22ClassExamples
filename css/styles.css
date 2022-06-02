@@ -48,11 +48,17 @@ nav a{
 }
 #image-example-2{
     height: 750px;
+    display: none; /* remove this if you want to see example 1 working */
 }
 .object-fit-example{
     object-fit: cover;
     width: 100%;
     height: 100%;
+}
+#image-example-3{
+    /* background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit; */
+    background: transparent url('../imgs/sample-wide.jpg') no-repeat left center;
+    height: 500px;
 }
 /* end of image example css */ 
 footer{
