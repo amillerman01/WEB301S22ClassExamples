@@ -303,6 +303,20 @@ footer{
         font: 24px/30px sans-serif;
         padding: 0 8px;
     }
+
+    /* make the grid mobile friendly */
+    [class*="col-"]{
+        width: 100%;
+        margin: 0 0 10px 0;
+        float: none;
+    }
+    [class*="col-"]:first-child{
+        margin-top: 10px;
+    }
+    .row::after {
+        margin: 0;
+    }
+
 }
 
 
