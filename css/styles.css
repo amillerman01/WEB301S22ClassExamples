@@ -16,7 +16,7 @@ nav a{
     display: inline-block;
     box-sizing: border-box;
 }
-#content-wrapper{
+.content-wrapper{
     margin: 16px;
     max-width: 1024px;
     margin: 0 auto;
@@ -94,6 +94,37 @@ p{
     display: none;
     padding: 24px;
 }
+
+/*
+  Grid System Definition - Without margins
+*/
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 24.99%;
+}
+.col-6 {
+    width: 49.98%;
+}
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+    text-align: center;
+    box-sizing: border-box;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin: 0 0 10px 0;
+}
+
 @media only screen and (max-device-width: 639px) and (orientation: landscape) {
     #wrapper {
         display: none; 
