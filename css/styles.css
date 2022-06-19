@@ -99,18 +99,27 @@ p{
   Grid System Definition - Without margins
 */
 
-.col-1 {
-    width: 8.33%;
+.col-1 { /* if we had a whole grid row of these, there would be 12 of them */
+    /* width: 8.33%; */
+    width: calc(100% / 12);
+    /* width: calc(100% / (12 / 1)); */
 }
-.col-2 {
-    width: 16.66%;
+.col-2 { /* if we had a whole grid row of these, there would be 6 of them */
+    /* width: 16.66%; */
+    width: calc(100% / 6);
+    /* width: calc(100% / (12 / 2)); */
 }
-.col-3 {
-    width: 24.99%;
+.col-3 { /* if we had a whole grid row of these, there would be 4 of them */
+    /* width: 24.99%; */
+    width: calc(100% / 4);
+    /* width: calc(100% / (12 / 3)); */
 }
-.col-6 {
-    width: 49.98%;
+.col-6 { /* if we had a whole grid row of these, there would be 2 of them */
+    /* width: 49.98%; */
+    width: calc(100% / 2);
+    /* width: calc(100% / (12 / 6)); */
 }
+
 [class*="col-"]{
     float: left;
     padding: 15px;
