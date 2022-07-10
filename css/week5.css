@@ -1,0 +1,35 @@
+/* css for swipeable example starts here */
+.wide-scrolling-wrapper{
+    width: 100%;
+    overflow-x: auto;
+    
+}
+.wide-scrolling-element{
+    min-width: 960px;
+    width: 100%;
+    background-color:yellow;
+    border: 5px solid dodgerblue;
+    height: 200px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+/* css for swipeable example ends here */
+
+/* css for navigation starts here */
+@media screen and (min-width: 640px) {
+    #mobile-hamburger{
+        display: none;
+    }
+    nav{
+        display: block !important;
+    }
+}
+@media screen and (max-width: 639px) {
+    #mobile-hamburger{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+}
+/* css for navigation ends here */ 
