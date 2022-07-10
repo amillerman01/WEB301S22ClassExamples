@@ -1,0 +1,196 @@
+
+/* This definition for row is common to both grid system definitions */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin: 0 0 10px 0;
+}
+
+
+/*
+  Grid System Definition - Without margins
+*/
+
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+    text-align: center;
+    box-sizing: border-box;
+}
+.col-1 { 
+    /* if we had a whole grid row of these, there would be 12 of them */
+    /* 12 = 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 */
+    /* width: 8.33%; */
+    width: calc(100% / 12);
+    /* width: calc(100% / (12 / 1)); */
+}
+.col-2 { 
+    /* if we had a whole grid row of these, there would be 6 of them */
+    /* 12 = 2 + 2 + 2 + 2 + 2 + 2 */
+    /* width: 16.66%; */
+    width: calc(100% / 6);
+    /* width: calc(100% / (12 / 2)); */
+}
+.col-3 { 
+    /* if we had a whole grid row of these, there would be 4 of them */
+    /* 12 = 3 + 3 + 3 + 3 */
+    /* width: 24.99%; */
+    width: calc(100% / 4);
+    /* width: calc(100% / (12 / 3)); */
+}
+.col-4 { 
+    /* if we had a whole grid row of these, there would be 3 of them */
+    /* 12 = 4 + 4 + 4 */
+    /* width: 33.32%; */
+    width: calc(100% / 3);
+    /* width: calc(100% / (12 / 4)); */
+}
+.col-5 { 
+    /* if we had a whole grid row of these, there would be... Oh no! It's not that simple this time */
+    /* 12 = 5 + 5 + .... we can't get to 12 evenly with 5 column wide elements */
+    /* Instead, let's do this the other direction. Let's build this up as 5 1 column items */
+    /* 5 column widths =  1 column width + 1 column width + 1 column width + 1 column width + 1 column width */
+    /* What's 1 column width? it's 100% / 12. That means 5 times that amount would be */
+    /* width: 41.65%; */
+    width: calc(5 * (100% / 12));
+    /* width: calc(100% / (12 / 5)); */
+}
+.col-6 { /* if we had a whole grid row of these, there would be 2 of them */
+    /* Look at the decimal version! 6 should be half, but 49.98% is not the same as 50%! */
+    /* width: 49.98%; */
+    width: calc(6 * (100% / 12));
+    /* width: calc(100% / (12 / 6)); */
+}
+.col-7 { 
+    /* if we had a whole grid row of these, there would be... now that we're past the half way point, we can't divide 100% by a normal number, so we use the same method we did with the 5 */
+    /* 7 columns wide = 1 + 1 + 1 + 1 + 1 + 1 + 1 */
+    /* width: %; */
+    width: calc(7 * (100% / 12));
+    /* OR we can use the 12 / 7 method */
+    /* width: calc(100% / (12 / 7)); */
+}
+.col-8 { 
+    /* width: %; */
+    width: calc(8 * (100% / 12)); /* For those strong in math, you can simplify this down */
+    /* width: calc(100% / (12 / 8)); */
+}
+.col-9 { 
+    /* width: %; */
+    width: calc(9 * (100% / 12));
+    /* width: calc(100% / (12 / 9)); */
+}
+.col-10 { 
+    /* width: %; */
+    width: calc(10 * (100% / 12));
+    /* width: calc(100% / (12 / 10)); */
+}
+.col-11 { 
+    /* width: %; */
+    width: calc(11 * (100% / 12));
+    /* width: calc(100% / (12 / 11)); */
+}
+.col-12 { /* if we had a whole grid row of these, there would be 1 of them! */
+    width: 100%; /* No math required! */
+}
+
+
+/*
+  Grid System Definition - WITH margins
+*/
+[class*="col-mar-"]{
+    float: left;
+    padding: 15px;
+    border: 1px solid blue;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: 1%;
+}
+[class*="col-mar-"]:first-child{
+    margin-left: 0;
+}
+.col-mar-1 { 
+    /* Originally we started with this */
+    /* width: calc(100% / 12); */
+    /* now we need to account for a 1% margin, 11 times (so we subtract it from 100 */
+    width: calc((100% - 11%) / 12);
+    /* width: calc(89% / 12); */
+}
+.col-mar-2 { 
+    /* Originally we started with this */
+    /* width: calc(2 * (100% / 12)); */
+    /* now we need to account for a 1% margin, 11 times (so we subtract it from 100 */
+    /* We add 1% afterwards because we lost 1 margin between two columns, so that 1% margin goes into this elements width */
+    width: calc(2 * ((100% - 11%) / 12) + (1 * 1%));
+    /* width: calc(2 * (89% / 12) + 1%); */
+}
+.col-mar-3 { 
+    /* Originally we started with this */
+    /* width: calc(3 * (100% / 12)); */
+    /* now we need to account for a 1% margin, 11 times (so we subtract it from 100 */
+    /* We add 1% afterwards 2 times because we lost 2 margins between the 3 columns, so that 2% margin goes into this elements width */
+    width: calc(3  * ((100% - 11%) / 12) + (2 * 1%));
+    /* width: calc(3 * (89% / 12) + 2%); */
+}
+.col-mar-4 { 
+    width: calc(4 * ((100% - 11%) / 12) + (3 * 1%));
+    /* width: calc(4 * (89% / 12) + 3%); */
+}
+.col-mar-5 { 
+    width: calc(5 * ((100% - 11%) / 12) + (4 * 1%));
+    /* width: calc(5 * (89% / 12) + 4%); */
+}
+.col-mar-6 { 
+    width: calc(6 * ((100% - 11%) / 12) + (5 * 1%));
+}
+.col-mar-7 { 
+    width: calc(7 * ((100% - 11%) / 12) + (6 * 1%));
+}
+.col-mar-8 { 
+    width: calc(8 * ((100% - 11%) / 12) + (7 * 1%)); 
+}
+.col-mar-9 { 
+    width: calc(9 * ((100% - 11%) / 12) + (8 * 1%));
+}
+.col-mar-10 { 
+    width: calc(10 * ((100% - 11%) / 12) + (9 * 1%));
+}
+.col-mar-11 { 
+    width: calc(11 * ((100% - 11%) / 12) + (10 * 1%));
+    /* width: calc(11 * (89% / 12) + 10%); */
+}
+.col-mar-12 { 
+    width: 100%; 
+}
+
+
+/* This is a great spot for this! */
+/* Tablet and Mobile view */
+@media screen and (max-width: 639px) {
+    
+    .row::after {
+        margin: 0;
+    }
+
+    /* make the grid mobile friendly */
+    [class*="col-"]{
+        width: 100%;
+        margin: 0 0 10px 0;
+        float: none;
+    }
+    [class*="col-"]:first-child{
+        margin-top: 10px;
+    }
+
+    /* make the grid with margins mobile friendly */
+    [class*="col-mar-"]{
+        width: 100%;
+        margin: 0 0 10px 0;
+        float: none;
+    }
+    [class*="col-mar-"]:first-child{
+        margin-top: 10px;
+    }
+
+}
