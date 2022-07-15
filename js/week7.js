@@ -20,6 +20,15 @@ $(function () {
   //   // do something with the data
   // });
   getLocation();
+
+  localStorage.setItem("tomato", 50);
+
+  let vegetable = "brocoli";
+  let vegetableCount = 100;
+
+  localStorage.setItem(vegetable, vegetableCount);
+
+  console.log(localStorage.getItem("tomato"));
 });
 
 function showPosition(position) {
