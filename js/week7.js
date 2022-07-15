@@ -1,20 +1,46 @@
 $(function () {
-  /* Scrolls the scrollable area manually when you click on the button */
-  $("#scroll-button").on("click", function () {
-    $(".wide-scrolling-wrapper").scrollLeft(300);
-  });
+  // $("button").on("click", getLocation);
 
-  /* Displays the amount the scrollable area has been scrolled horizontally */
-  $(".wide-scrolling-wrapper").on("scroll", function () {
-    $("#scroll-distance").text($(this).scrollLeft());
-  });
-
-  $("#mobile-hamburger").on("click", function () {
-    $("nav").slideToggle(500);
-  });
-  $(window).on("resize", function () {
-    if ($(window).width() >= 640) {
-      $("nav").hide();
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      document.getElementById("demo").innerHTML =
+        "Geolocation is not supported by this browser.";
     }
-  });
+  }
+
+  // navigator.geolocation.getCurrentPosition(showPosition);
+
+  // function showPosition(positionData) {
+  //   // do something with the data
+  // }
+
+  // navigator.geolocation.getCurrentPosition(function (positionData) {
+  //   // do something with the data
+  // });
+  getLocation();
 });
+
+function showPosition(position) {
+  $("#geo-data").html(
+    `Latitude: ${position.coords.latitude} <br>Longitude: ${position.coords.longitude}`
+  );
+}
+
+function showError(error) {
+  console.log("An error occurred: ", error);
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      console.log("Permission denied");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      console.log("Position unavailable");
+      break;
+    case error.TIMEOUT:
+      console.log("Position took too long!");
+      break;
+    default:
+      console.log("Something went wrong with the geolocation");
+  }
+}
