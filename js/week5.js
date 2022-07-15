@@ -10,6 +10,11 @@ $(function () {
   });
 
   $("#mobile-hamburger").on("click", function () {
-    $("nav").slideToggle();
+    $("nav").slideToggle(500);
+  });
+  $(window).on("resize", function () {
+    if ($(window).width() >= 640) {
+      $("nav").hide();
+    }
   });
 });
